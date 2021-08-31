@@ -9,15 +9,15 @@ spec:
       - name: kaniko
         image: gcr.io/kaniko-project/executor:latest
         args: ["--dockerfile=Dockerfile",
-               "--context=git://github.com/GHUSER/GHREPO.git#refs/heads/master",
-               "--destination=<repo>/<tag>"]
+               "--context=git://github.com/ubernetes-utilities/kubernetes-kaniko.git#refs/heads/master",
+               "--destination=codeanit/demo-cicd-go:v0.0.1"]
         volumeMounts:
         - name: kaniko-secret
           mountPath: "/kaniko/.docker"
       restartPolicy: Never
       volumes:
       - name: kaniko-secret
-        secret:
+        secret:```
           secretName: regcred
           items:
           - key: .dockerconfigjson
