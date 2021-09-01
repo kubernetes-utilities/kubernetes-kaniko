@@ -23,7 +23,7 @@ spec:
         - containerPort: 80
         volumeMounts:
         - name: web-data
-        mountPath: /var/web         
+          mountPath: /var/web         
       volumes:
       - name: web-data
         persistentVolumeClaim:

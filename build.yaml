@@ -17,8 +17,8 @@ spec:
       restartPolicy: Never
       volumes:
       - name: kaniko-secret
-        persistentVolumeClaim:
-          claimName: web-pv-claim
+#        persistentVolumeClaim:
+#          claimName: web-pv-claim
         secret:          
           secretName: regcred
           items:
